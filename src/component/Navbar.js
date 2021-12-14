@@ -35,12 +35,12 @@ const Navbar = (props) => {
                 <div>
                  <ul>
                     <li>
-                    <NavLink className="navlink" exact to="/panier" >  <i id='bag' class="fas fa-shopping-bag"></i>
+                    <NavLink className="navlink" exact to="/panier" style ={{backgroundColor: props.panierlen>0? "orange" : "white" , padding: "20px",color : props.panierlen>0? "white" : "black",  }} >  <i style={{animation : props.panierlen>0 ? "bounce 0.7s ease infinite" :"rien"}}id='bag' class="fas fa-shopping-bag"></i>
                          <span>{props.panierlen}</span> 
                     </NavLink>
                         </li>
                         <li>
-                            <NavLink className="navlink" exact to="/coeur" ><i id="like" onClick={seePanier} class="far fa-heart"></i>   
+                            <NavLink className="navlink" exact to="/coeur"  style ={{backgroundColor: props.likelen>0? "pink" : "white" , padding: "20px", color : props.likelen>0? "white" : "black"}}><i   style={{animation : props.likelen>0 ? "bounce 0.7s ease infinite" :"rien"}}      id="like" onClick={seePanier} class="far fa-heart"></i>   
                         <span>{props.likelen}</span>
                         </NavLink>
                         </li>

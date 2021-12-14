@@ -93,6 +93,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20% 0px ; 
+    
 }
 .nav-pills {
     position: absolute;
@@ -162,3 +164,16 @@
      color: white;
      background-attachment: fixed;
  }
+.operation { 
+    background-color: grey;
+    color: white;
+    margin: 2px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes bounce{
+    from {transform: translateY(0);}
+    to   {transform: translateY(-20px);}
+}

@@ -32,15 +32,15 @@ import Zoom from './pages/Zoom';
 function App() {
 let p ="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis soluta eum corporis, voluptatibus esse consectetur molestiae provident at inventore, odit accusantium ea nihil reprehenderit fugit tempora quia expedita omnis delectus non! Laborum aliquid dolorum necessitatibus eligendi libero repudiandae? Consequuntur esse totam eos sint. Dolores, earum, cumque doloribus voluptate nobis tempore, ipsam fugiat qui tenetur culpa quaerat reiciendis quasi laboriosam amet error assumenda praesentium eum vel? Officia commodi sunt nobis voluptas tenetur placeat in inventore quasi magnam aperiam, cupiditate, quibusdam a consectetur explicabo rem hic cumque possimus doloribus facere nihil porro? Eaque sint ad culpa, perspiciatis recusandae beatae odit laudantium impedit nesciunt, perferendis quam facilis minus voluptate ut animi sequi magnam praesentium ipsum numquam expedita. Doloremque asperiores nostrum harum eaque illum itaque alias repellat dicta beatae recusandae, ab praesentium molestiae consectetur. Necessitatibus, enim praesentium dolorem neque et vel aliquam ab doloribus vero saepe ipsa autem ut quo, impedit numquam id natus eligendi nam aperiam consequatur ratione provident, eum architecto culpa! Ipsam, sequi culpa beatae provident esse modi facere, repudiandae aliquid ipsa eaque, ullam ut. At quos delectus sapiente aperiam culpa, similique, alias magni maxime blanditiis eius harum adipisci vel eos? Porro hic ad dicta odit, nihil voluptas atque ex quis facere!"
 const [articles, setArticles] = useState([
-    { id: uuidv4(), liens : article1,  statut: "New", ancienPrix: "", toggle: true, nom: 'Adidas', prix: 75 },
-    { id: uuidv4(), liens : article2,  statut: "", ancienPrix: "", toggle: null, nom: "Nike", prix: 92.5 },
-    { id: uuidv4(), liens : article3,  statut: "", ancienPrix: "", toggle: null, nom: "Puma", prix: 165.90 },
-    { id: uuidv4(), liens : article4,  statut: "", ancienPrix: "", toggle: null, nom: "Converse", prix: 92.5 },
-    { id: uuidv4(), liens : article5,  statut: "Sale", ancienPrix: 29.50, toggle: false, nom: "Reebook", prix: 15.95 },
-    { id: uuidv4(), liens : article6,  statut: "New", ancienPrix: "", toggle: true, nom: "Superdry", prix: 75 },
-    { id: uuidv4(), liens : article7,  statut: "New", ancienPrix: "", toggle: true, nom: "North Face", prix: 75 },
-    { id: uuidv4(), liens : article8,  statut: "", ancienPrix: "", toggle: null, nom: "Carhartt", prix: 92.5 },
-    { id: uuidv4(), liens : article9,  statut: "", ancienPrix: "", toggle: null, nom: "Vans", prix: 165.90 },
+    { id: uuidv4(), quantite : 1 , liens : article1,  statut: "New", ancienPrix: "", toggle: true, prixNew : 75,  nom: 'Adidas', prix: 75 },
+    { id: uuidv4(), quantite : 1 , liens : article2,  statut: "", ancienPrix: "", toggle: null,    prixNew : 92.5,  nom: "Nike", prix: 92.5 },
+    { id: uuidv4(), quantite : 1 , liens : article3,  statut: "", ancienPrix: "", toggle: null,    prixNew : 165.90,  nom: "Puma", prix: 165.90 },
+    { id: uuidv4(), quantite : 1 , liens : article4,  statut: "", ancienPrix: "", toggle: null,    prixNew : 92.50,  nom: "Converse", prix: 92.5 },
+    { id: uuidv4(), quantite : 1 , liens : article5,  statut: "Sale", ancienPrix: 29.50,           prixNew : 15.95,  toggle:  false, nom: "Reebook", prix: 15.95 },
+    { id: uuidv4(), quantite : 1 , liens : article6,  statut: "New", ancienPrix: "", toggle: true, prixNew : 75,  nom: "Superdry", prix: 75 },
+    { id: uuidv4(), quantite : 1 , liens : article7,  statut: "New", ancienPrix: "", toggle: true, prixNew : 75,   nom: "North Face", prix: 75 },
+    { id: uuidv4(), quantite : 1 , liens : article8,  statut: "", ancienPrix: "", toggle: null,    prixNew : 92.5,  nom: "Carhartt", prix: 92.5 },
+    { id: uuidv4(), quantite : 1 , liens : article9,  statut: "", ancienPrix: "", toggle: null,    prixNew : 165.90,   nom: "Vans", prix: 165.90 },
 
 ]);
 const [filterTableau, setFilterTableau] = useState([
