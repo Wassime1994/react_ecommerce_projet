@@ -19,6 +19,7 @@ const Home = (props) => {
             filter = {props.filter}
             func = {props.func}
             supprime ={props.click}
+            supprimeLike={props.clickLike}
             like = {props.like}
             zoom = {props.zoom}
             old = {props.old}

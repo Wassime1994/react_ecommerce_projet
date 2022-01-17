@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\node_modules"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\.vscode"
+		},
+		{
+			"path": "..\\..\\public"
+		},
+		{
+			"path": "..\\..\\.git"
+		}
+	]
+}

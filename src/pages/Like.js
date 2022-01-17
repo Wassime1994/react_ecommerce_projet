@@ -5,9 +5,9 @@ import Navbar from '../component/Navbar';
 const Like = (props) => {
     // console.log(props.click)
     const supprime = id => { 
-        props.click(id)
-           
+           props.clickLike(id)       
     }
+
     return (
         <div>
             <Navbar />

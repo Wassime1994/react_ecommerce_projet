@@ -8,9 +8,20 @@ const Panier = (props) => {
     const [quantite, setQuantite] = useState(1)
     const [prixTotal, setprixTotal] = useState(props.prix)
     const supprime = id => { 
-        props.click(id)
-       
-        
+        let quantite = [ ...props.articles ]
+        setprixTotal(props.prix)
+        let prixTot = prixTotal
+        const test = quantite.map(el=>{
+            if(el.id==id.target.value && el.quantite>=1 ){
+            prixTot-=el.prix                
+            setprixTotal(prixTot)
+            }
+            if(prixTot<0) { 
+                prixTot = 0
+                setprixTotal(prixTot)
+            }
+        })
+        props.click(id)  
     }
    
     const add = id=>{
@@ -42,8 +53,6 @@ const Panier = (props) => {
                     let prixTotal = props.prix
                     el.quantite-=1
                     el.prix = el.prixNew * el.quantite
-                    console.log(el.quantite)
-                    console.log(el.prix*el.quantite)
                     prixTot -= el.prixNew
 
                 }

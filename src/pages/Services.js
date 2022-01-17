@@ -20,6 +20,8 @@ const Services = (props) => {
                 inputValue = {props.inputValue}
                 like ={props.like}
                 tableauSolde= {props.tableauSolde}
+                solde = {props.solde}
+                zoom={props.zoom}
                 
 
                  />

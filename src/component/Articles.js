@@ -11,6 +11,7 @@ import article8 from "../accents/images/PRODUCT/8.jpg"
 import article9 from "../accents/images/PRODUCT/9.jpg"
 import { v4 as uuidv4 } from 'uuid';
 import Panier from '../pages/Panier';
+import { NavLink } from 'react-router-dom';
 
 
 const Articles = (props) => {
@@ -41,8 +42,9 @@ const [filter, setfilter] = useState('Filter');
     const changeLike = e =>{
         props.like(e)
     }
-     
-       
+    const imgEnvoie = id => {
+        props.zoom(id)
+    }
     
 
     return (
@@ -54,6 +56,9 @@ const [filter, setfilter] = useState('Filter');
             <div className='d-flex justify-content-between'>
                 <h3 className='m-2'>Categories</h3>
                 <h4>Nombre de productcs search : {props.articles.length} all</h4>
+            </div>
+            <div className='d-flex justify-content-between'>
+                <h4>Nombre de productcs soldé: {props.solde} all</h4>
             </div>
             <div className="grandeDiv container ">
                 <div className="listeProduct">
@@ -85,6 +90,9 @@ const [filter, setfilter] = useState('Filter');
                                     <span className={el.toggle ? "new" : el.toggle == null ? "" : "sale"}>
                                         {el.statut}
                                     </span>
+                                    <NavLink className="navlink" exact to="/zoom"  >
+                                        <button className ="btn_info" onClick={imgEnvoie} value={el.id}>Avoir plus d'infos</button>
+                                         </NavLink>
                                 <button onClick = {addCard} value={el.id} className='achatbtn'>Add to Cart</button>
                                 <button onClick={changeLike} value = {el.id} id="like"> ♥ </button>
                                 </div>

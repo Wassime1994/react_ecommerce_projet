@@ -68,6 +68,15 @@ const [nouveauArticles, setNouveauArticles] = useState([
 
 ]);
 const [articlesChoix, setarticlesChoix] = useState([]);
+
+const solde = []
+articles.map(el=>{
+  if(el.statut=="Sale") { 
+    solde.push(el)
+  }
+})
+const [articlesSolde, setArticlesSolde] = useState(solde.length);
+console.log(articlesSolde.length)
 const [articlesFav, setarticlesFav] = useState([]);
 const [toggleLike, settoggleLike] = useState(false)
 const [tableauZoom, setTableauZoom] = useState([])
@@ -83,7 +92,7 @@ const like = e => {
     console.log(articlesFav)
   })
   
-}
+} 
 
 
 const addCard = id => { 
@@ -104,11 +113,25 @@ const addCard = id => {
 
 }
 const supprime =id =>{
-  // console.log(id.target.value)
   const tableauFilter = articlesChoix.filter(el=>{
     return (
     (el.id !== id.target.value)
     )})
+    articles.map(el=>{
+      if(el.id === id.target.value){ 
+      let newPrix= prix
+      newPrix -=el.prix
+      if(newPrix<1){
+        newPrix = 0
+      }
+      setprix(newPrix)  
+    }                           
+    })
+    setarticlesChoix(tableauFilter)
+    console.log(articlesFav)
+
+}
+const supprimeLike =id =>{
   const tableauLike = articlesFav.filter(el=>{
       return (
         el.id !== id.target.value
@@ -123,11 +146,11 @@ const supprime =id =>{
       setprix(newPrix)  
     }                           
     })
-    setarticlesChoix(tableauFilter)
     setarticlesFav(tableauLike)
     console.log(articlesFav)
 
 }
+
 const [input, setInput] = useState();
 
 const inputValue = (e) => {
@@ -215,13 +238,13 @@ return (
     <BrowserRouter>
     <Routes> 
       <Route path='/' exact element = {<Home 
-      tableau = {articles} filter= {filter}  func ={addCard} click={supprime} like = {like} likelen = {articlesFav.length} panierlen={articlesChoix.length} zoom={zoom}
+      tableau = {articles} filter= {filter}  func ={addCard} click={supprime}  clickLike={supprimeLike} like = {like}  likelen = {articlesFav.length} panierlen={articlesChoix.length} zoom={zoom}
       old = {old} sale = {sale} nouveau = {nouveau} bestSeller={bestSeller}
       />} />
-      <Route path="*" exact element ={<Notfound/>}/>
+      <Route path="*" exact element ={<Notfound      />}/>
       <Route path="/About" exact element ={<About/>}/>
       <Route path ="/services" exact element = { 
-        < Services articles={articles} click={addCard} submit ={submit} inputValue = {inputValue} like ={like} 
+        < Services articles={articles} click={addCard} submit ={submit} inputValue = {inputValue} like ={like} solde={articlesSolde} zoom={zoom}
           />}   />
       <Route path ="/contact" exact element = {<Contact />} />
       <Route path ="/zoom" exact element = {<Zoom 
@@ -229,7 +252,7 @@ return (
       />} />
       <Route path ="/panier" exact element = 
       {<Panier articles = {articlesChoix}   click = {supprime} prix = {prix} />} />
-      <Route path ="/coeur" exact element = {<Like articles = {articlesFav} click = {supprime} />} />
+      <Route path ="/coeur" exact element = {<Like articles = {articlesFav} click = {supprime} clickLike={supprimeLike} />} />
     </Routes>
   
     </BrowserRouter>

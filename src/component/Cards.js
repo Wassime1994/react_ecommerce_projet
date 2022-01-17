@@ -70,7 +70,7 @@ const Cards = (props) => {
             <div className=" row main">
 
 
-                <div className=" parent col-xs-12 col-lg-3" style={{ backgroundImage: `url(${soon1})` }}>                         <p>Comming Soon </p>
+                <div className=" parent col-xs-12 col-lg-3" style={{ backgroundImage: `url(${soon1})` }}>      <p>Comming Soon </p>
                 </div>
                 <div className="parent col-xs-12 col-lg-3" style={{ backgroundImage: `url(${soon2})`, backgroundSize: "100%", backgroundRepeat: "no-repeat" }}>
                     <p>Comming Soon </p>
